@@ -1,0 +1,46 @@
+.mainContent {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b1b1f;
+
+  .wrapper {
+    .middleSearch {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      .input {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        input {
+          width: 500px;
+          height: 50px;
+          font-size: 26px;
+          border-radius: 10px;
+          border: none;
+          text-align: center;
+        }
+        input:focus {
+          outline: none;
+          border: 2px solid green;
+        }
+
+        button {
+          width: 100px;
+          height: 50px;
+          border: none;
+          cursor: pointer;
+        }
+      }
+
+      .movieDisplay {
+        img {
+          user-select: none;
+        }
+      }
+    }
+  }
+}

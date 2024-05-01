@@ -1,0 +1,14 @@
+<div class="mainContent">
+  <div class="wrapper">
+    <div class="middleSearch">
+      <div class="input">
+        <input type="text" #movieInput />
+        <button (click)="loadMovie(movieInput.value)">Search Movie</button>
+      </div>
+
+      <div class="movieDisplay">
+        <img [src]="movie?.Poster" [alt]="" draggable="false" />
+      </div>
+    </div>
+  </div>
+</div>
