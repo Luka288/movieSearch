@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { api, requestAPI } from '../consts';
-import { movie } from '../../interfaces/movieInter';
+import { movie } from '../interfaces/movieInter';
+import { requestAPI } from '../consts/consts';
 
 @Injectable({
   providedIn: 'root'

@@ -24,6 +24,7 @@ export interface movie {
     imdbID: string,
     imdbRating: string,
     imdbVotes: string,
+    totalSeasons: string
 }
 
 export interface Ratings {

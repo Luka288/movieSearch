@@ -2,12 +2,49 @@
   <div class="wrapper">
     <div class="middleSearch">
       <div class="input">
-        <input type="text" #movieInput />
+        <input type="text" #movieInput value="interstellar" />
         <button (click)="loadMovie(movieInput.value)">Search Movie</button>
       </div>
 
       <div class="movieDisplay">
-        <img [src]="movie?.Poster" [alt]="" draggable="false" />
+        <div class="imageDisplay">
+          @if (movie?.Poster) {
+          <img [src]="movie?.Poster" alt="No Poster" draggable="false" />
+          }
+        </div>
+        <div class="textDisplay">
+          @if (movie?.Title) {
+          <h2>{{ movie?.Title }}</h2>
+          <h3><span>Movie Type: </span> {{ movie?.Type }}</h3>
+          <h3><span>Genre: </span>{{ movie?.Genre }}</h3>
+          @if (movie?.Plot == "N/A") {
+          <h3 class="redTitle">No description for this movie</h3>
+          }@else {
+          <h3 class="plot">{{ movie?.Plot }}</h3>
+          }
+          <p><span>Actors: </span>{{ movie?.Actors }}</p>
+          <p><span>Movie Filmed in: </span>{{ movie?.Country }}</p>
+          <p><span>ImdbRating: </span>{{ movie?.imdbRating }}</p>
+          @if (!movie?.BoxOffice) {
+          <p><span>Box Office: </span> No Information</p>
+          }@else {
+          <p><span>Box Office: </span>{{ movie?.BoxOffice }}</p>
+          } @if (movie?.totalSeasons) {
+          <p><span>Total Seasons: </span>{{ movie?.totalSeasons }}</p>
+          }
+          <p><span>Language: </span>{{ movie?.Language }}</p>
+          <p><span>Awards: </span>{{ movie?.Awards }}</p>
+          <p>{{videos?.videos?.[0]?.key}}</p>
+          }
+          <iframe
+            width="400"
+            height="240"
+            [src]="link + videos?.videos?.[0]?.key"
+            frameborder="0"
+            allowfullscreen
+            ng-show="showvideo"
+          ></iframe>
+        </div>
       </div>
     </div>
   </div>
