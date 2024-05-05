@@ -10,6 +10,22 @@
         <div class="imageDisplay">
           @if (movie?.Poster) {
           <img [src]="movie?.Poster" alt="No Poster" draggable="false" />
+          } @if (movie?.Type == "movie") {
+          <iframe
+            width="700"
+            height="444"
+            [src]="videoUrl"
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
+          }@else {
+          <iframe
+            width="700"
+            height="444"
+            [src]=""
+            frameborder="0"
+            allowfullscreen
+          ></iframe>
           }
         </div>
         <div class="textDisplay">
@@ -34,16 +50,7 @@
           }
           <p><span>Language: </span>{{ movie?.Language }}</p>
           <p><span>Awards: </span>{{ movie?.Awards }}</p>
-          <p>{{videos?.videos?.[0]?.key}}</p>
           }
-          <iframe
-            width="400"
-            height="240"
-            [src]="link + videos?.videos?.[0]?.key"
-            frameborder="0"
-            allowfullscreen
-            ng-show="showvideo"
-          ></iframe>
         </div>
       </div>
     </div>

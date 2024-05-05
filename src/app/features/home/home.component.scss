@@ -54,7 +54,9 @@
         color: white;
 
         .imageDisplay {
-          display: flex;
+          display: grid;
+          grid-template-columns: repeat(2, 0fr);
+          justify-content: space-between;
           align-items: flex-start;
           img {
             // animation: myAnim 2s ease 0s 1 normal forwards;
