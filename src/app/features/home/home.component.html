@@ -1,16 +1,23 @@
 <div class="mainContent">
   <div class="wrapper">
-    <div class="middleSearch">
+    <div class="middleSearch input_container">
       <div class="input">
-        <input type="text" #movieInput value="interstellar" />
+        <div class="inputWrapper">
+          <input
+            type="text"
+            class="awsome_input border"
+            placeholder="Search movie"
+            #movieInput
+          />
+          <span class="awsome_input_border"></span>
+        </div>
         <button (click)="loadMovie(movieInput.value)">Search Movie</button>
       </div>
-
       <div class="movieDisplay">
         <div class="imageDisplay">
           @if (movie?.Poster) {
           <img [src]="movie?.Poster" alt="No Poster" draggable="false" />
-          } @if (movie?.Type == "movie") {
+          } @if (movie?.Type == "movie" && videoUrl) {
           <iframe
             width="700"
             height="444"

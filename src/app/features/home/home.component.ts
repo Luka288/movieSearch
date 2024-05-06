@@ -41,6 +41,7 @@ export class HomeComponent{
       }
       // console.log(...this.pervSearched)
       this.movie = resp
+      this.videoUrl = null
       this.loadTrailer(resp.imdbID)
       // this.videoService.getVideo()
       // console.log(this.loadTrailer)

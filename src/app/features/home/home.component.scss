@@ -18,13 +18,16 @@
         align-items: center;
         padding-top: 75px;
         gap: 10px;
-        input {
-          width: 500px;
-          height: 50px;
-          font-size: 26px;
-          border-radius: 10px;
-          border: none;
-          text-align: center;
+        .inputWrapper {
+          input {
+            width: 500px;
+            height: 50px;
+            font-size: 26px;
+            border-radius: 10px;
+            border: none;
+            text-align: center;
+            color: white;
+          }
         }
         input:focus {
           outline: none;
@@ -71,6 +74,7 @@
           display: inline;
           padding-bottom: 50px;
           width: 350px;
+          max-width: 350px;
           margin: 10px;
           gap: 10px;
 
@@ -79,6 +83,36 @@
           }
         }
       }
+    }
+  }
+  .input_container {
+    display: inline-block;
+    .awsome_input {
+      padding: 5px 10px;
+      border: none;
+      background: transparent;
+      display: block;
+    }
+    .awsome_input_border {
+      display: inline-block;
+      width: 0px;
+      height: 2px;
+      background: #fec938;
+      position: relative;
+      top: -5px;
+      -webkit-transition: all ease-in-out 0.15s;
+      -o-transition: all ease-in-out 0.15s;
+      transition: all ease-in-out 0.15s;
+    }
+    .awsome_input:hover,
+    .awsome_input:active,
+    .awsome_input:focus {
+      outline: none;
+    }
+    .awsome_input:hover + .awsome_input_border,
+    .awsome_input:active + .awsome_input_border,
+    .awsome_input:focus + .awsome_input_border {
+      width: 100%;
     }
   }
 }
@@ -90,5 +124,46 @@
 
   100% {
     transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    justify-content: center;
+    .wrapper {
+      .middleSearch {
+        .movieDisplay {
+          iframe {
+            width: 200px;
+          }
+          .imageDisplay {
+            grid-template-columns: repeat(1, 0fr);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .mainContent {
+    justify-content: center;
+    .wrapper {
+      .middleSearch {
+        .input {
+          input {
+            width: 200px;
+          }
+        }
+        .movieDisplay {
+          iframe {
+            width: 300px;
+          }
+          .imageDisplay {
+            grid-template-columns: repeat(1, 0fr);
+          }
+        }
+      }
+    }
   }
 }
