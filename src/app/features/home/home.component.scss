@@ -40,12 +40,13 @@
           border: none;
           cursor: pointer;
           transition: 0.3s ease-out;
+          background-color: #fec938;
         }
 
         button:hover {
           background-color: transparent;
-          border: 2px solid white;
-          color: white;
+          border: 2px solid #fec938;
+          color: #fec938;
           transition: 0.3s ease-in;
         }
       }
