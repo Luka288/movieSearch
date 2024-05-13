@@ -37,14 +37,11 @@ export class HomeComponent{
     this.httpRequest.getMovie(movieId).subscribe((resp) => {
       this.pervSearched.push(resp)
       if (resp?.Response == "False") {
-        this.sweetAlerts.toast("Empty input", "error", "red")
+        this.sweetAlerts.toast("Check input", "error", "red")
       }
-      // console.log(...this.pervSearched)
       this.movie = resp
       this.videoUrl = null
       this.loadTrailer(resp.imdbID)
-      // this.videoService.getVideo()
-      // console.log(this.loadTrailer)
       console.log(resp)
     });
 
@@ -66,7 +63,6 @@ export class HomeComponent{
         const videoUrl = `https://www.youtube.com/embed/${videoId}`;
         this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(videoUrl);
       }
-      // console.log(resp)
     });
   }
 }
