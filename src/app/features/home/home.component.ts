@@ -17,7 +17,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
-export class HomeComponent{
+export default class HomeComponent{
   private readonly httpRequest = inject(FetchMovieService)
   private readonly trailerRequest = inject(TrailerFetchService)
   private readonly sweetAlerts = inject(SweetalertService)
